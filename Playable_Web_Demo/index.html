@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CURVE SHOT — Precision Physics (Web3Task Dev Preview)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Top HUD -->
+        <div class="hud-layer">
+            <div class="hud-left">
+                <span class="game-title">Web3Task • Curve Shot</span>
+                <h1 class="level-title" id="ui-level-title">Level 1: Training Curve</h1>
+                <p class="level-hint" id="ui-level-hint">Drag backward from the ball to select launch power and angle.</p>
+            </div>
+
+            <div class="hud-center">
+                <div class="power-gauge-container">
+                    <span class="power-label">POWER</span>
+                    <div class="power-bar-bg">
+                        <div class="power-bar-fill" id="ui-power-fill"></div>
+                    </div>
+                    <span class="power-val" id="ui-power-text">0%</span>
+                </div>
+            </div>
+
+            <div class="hud-right">
+                <div class="attempt-badge" id="ui-attempt-badge">Attempt: 0</div>
+                <button class="btn-icon" id="ui-mute-btn" title="Toggle Sound">Sound: ON</button>
+                <button class="btn-icon" id="ui-restart-btn" title="Reset Level">Restart</button>
+            </div>
+        </div>
+
+        <!-- Feedback Banner -->
+        <div class="feedback-banner" id="ui-feedback-banner"></div>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay" id="ui-success-modal">
+            <div class="modal-card">
+                <div class="modal-header success">EXCELLENT SHOT!</div>
+                <div class="modal-body" id="ui-success-body">Level Cleared!</div>
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="ui-success-replay">Replay</button>
+                    <button class="btn-primary" id="ui-next-level">Next Level</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Failure Modal -->
+        <div class="modal-overlay" id="ui-failure-modal">
+            <div class="modal-card">
+                <div class="modal-header failure" id="ui-failure-title">SHOT FAILED</div>
+                <div class="modal-body" id="ui-failure-body">Trajectory missed acceptable ramp window.</div>
+                <div class="modal-actions">
+                    <button class="btn-primary" id="ui-failure-retry">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
